@@ -17,12 +17,13 @@ class Fenster(object):
 
         print('Am Anfang steht in "form"', self.form)
 
-        self.form.trace("w",self.callback(self.form))
+        self.form.trace("w", self.callback)
+        self.fenster.mainloop()
         print('Nach Ausführung von "ausfuehrungForm" steht in form: ', self.form)
 
         
         
-    def callback(self,form):
+    def callback(self, *args):
         self.chosen_option = self.form.get()
         print('chosen_option hat den Wert: ', self.chosen_option)
         self.ausfuehrungForm(self.chosen_option)      
